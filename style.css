@@ -1,0 +1,24 @@
+html {
+  background-color: #093C37;
+  font-family: 'Saira', sans-serif;
+}
+
+.container {
+  text-align: center;
+}
+
+.container h2 {
+  color: white;
+  font-weight: 700;
+  font-size: 52px;
+}
+
+label {
+  color: #ccc;
+  font-size: 20px;
+  margin-left: 20px;
+}
+
+.controllers {
+  margin-bottom: 20px;
+}
