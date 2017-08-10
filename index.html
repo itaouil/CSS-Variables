@@ -18,25 +18,67 @@
 
       <div class="controllers">
 
-        <!-- Spacing -->
-        <label for="spacing">Spacing</label>
-        <input type="range" name="spacing" id="spacing" value="0">
+        <!-- border -->
+        <label for="border">Border</label>
+        <input type="range" name="border" id="border" value="0" min="0" max="100">
 
         <!-- Blur -->
         <label for="blur">Blur</label>
-        <input type="range" name="blur" id="blur" value="0">
+        <input type="range" name="blur" id="blur" value="0" min="0" max="100">
 
         <!-- Base Color -->
         <label for="base-color">Base Color</label>
-        <input type="color" name="base-color" id="base-color" value="0">
+        <input type="color" name="base" id="base" value="#FFFFFF">
 
       </div>
 
-      <div class="img-target">
-        <img src="http://unsplash.it/800/500?image-899" alt="table">
-      </div>
+      <img src="http://unsplash.it/800/500?image-899" alt="table">
 
     </div>
+
+    <script>
+
+      // Update function
+      function updateVariables() {
+
+        // Suffix to add px or nothing
+        const suffix = (this.id === 'base' ? '' : 'px');
+
+        // Update CSS property
+        document.documentElement.style.setProperty(`--${this.id}`, this.value + suffix);
+
+      }
+
+      // Cache inputs
+      const inputs = [].slice.call(document.querySelectorAll(".controllers input"));
+
+      // Add event listerners
+      inputs.forEach(input => input.addEventListener('input', updateVariables));
+      // inputs.forEach(input => input.addEventListener('change', updateVariables));
+
+      // console.log(inputs);
+      // Cache input elements
+      // const border = document.querySelector('#border')
+      // const blur = document.querySelector('#blur');
+      // const color = document.querySelector('#base-color');
+
+
+      // Event listener for blur input
+      // border.addEventListener('input', function () {
+      //   updateVariables(border.value, blur.value, color.value);
+      // });
+
+      // Event listener for blur input
+      // blur.addEventListener('input', function (e) {
+      //   updateVariables(border.value, blur.value, color.value);
+      // });
+
+      // Event listener for base-color input
+      // color.addEventListener('input', function (e) {
+      //   updateVariables(border.value, blur.value, color.value);
+      // });
+
+    </script>
 
   </body>
 
